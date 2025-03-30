@@ -14,7 +14,7 @@ const Footer = () => {
           transition={{ duration: 0.5 }}
           className="text-center md:text-left"
         >
-          <h2 className="text-xl font-bold">Your Company</h2>
+          <h2 className="text-xl font-bold">Nikhil Anand</h2>
           <p className="text-muted-foreground text-sm mt-2">
             &copy; {new Date().getFullYear()} All rights reserved.
           </p>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DynamicThemeToggle from "../DynamicThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +62,7 @@ const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-neutral-900/90 backdrop-blur-sm shadow-lg" : "bg-transparent"
+        scrolled ? "bg-neutral-900/90  backdrop-blur-sm shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -89,7 +90,7 @@ const Navbar = () => {
               >
                 <Link 
                   href={link.href} 
-                  className="text-neutral-300 hover:text-primary transition-colors"
+                  className="text-black hover:text-primary transition-colors dark:text-neutral-200 font-semibold"
                 >
                   {link.title}
                 </Link>
@@ -105,6 +106,14 @@ const Navbar = () => {
                 <Download size={16} />
                 Resume
               </Button>
+            </motion.div>
+            <motion.div
+              custom={navLinks.length + 1}
+              initial="hidden"
+              animate="visible"
+              variants={navItemVariants}
+            >
+              <DynamicThemeToggle />
             </motion.div>
           </div>
 
@@ -143,6 +152,9 @@ const Navbar = () => {
               <Download size={16} />
               Resume
             </Button>
+            <div className="px-4">
+              <DynamicThemeToggle />
+            </div>
           </div>
         </motion.div>
       </div>
