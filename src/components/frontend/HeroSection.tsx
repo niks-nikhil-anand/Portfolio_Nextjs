@@ -54,24 +54,43 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <Avatar className="w-24 h-24 mb-4 rounded-full border border-primary">
-            <AvatarImage src="https://via.placeholder.com/150" alt="Placeholder Image" />
+          <Avatar className="w-40 h-40 mb-4 rounded-full border-2 border-primary overflow-hidden">
+            <AvatarImage
+              src="/assets/profile.jpeg"
+              alt="Profile Image"
+              className="w-full h-full object-cover object-center"
+            />
           </Avatar>
 
-          <motion.span className="text-primary font-mono text-lg mb-2" variants={itemVariants}>
+          <motion.span
+            className="text-primary font-mono text-lg mb-2"
+            variants={itemVariants}
+          >
             👋 Hello, my name is
           </motion.span>
 
-          <motion.h1 className="text-4xl md:text-6xl font-bold mb-4" variants={itemVariants}>
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold mb-4"
+            variants={itemVariants}
+          >
             <span className="block">Nikhil Anand</span>
-            <span className="block text-primary mt-2">Full Stack Developer</span>
+            <span className="block text-primary mt-2">
+              Full Stack Developer
+            </span>
           </motion.h1>
 
-          <motion.p className="text-muted-foreground text-lg mb-8 leading-relaxed" variants={itemVariants}>
-            I build modern, responsive, and user-friendly web applications with a focus on clean code and optimal performance.
+          <motion.p
+            className="text-muted-foreground text-lg mb-8 leading-relaxed"
+            variants={itemVariants}
+          >
+            I build modern, responsive, and user-friendly web applications with
+            a focus on clean code and optimal performance.
           </motion.p>
 
-          <motion.div className="flex flex-wrap gap-4 mb-12" variants={itemVariants}>
+          <motion.div
+            className="flex flex-wrap gap-4 mb-12"
+            variants={itemVariants}
+          >
             <Button className="px-6 py-6 text-base flex items-center gap-2">
               View My Work
               <ChevronRight size={16} />
@@ -94,7 +113,13 @@ const HeroSection = () => {
               </div>
               <div className="flex flex-wrap gap-2">
                 {frontendTechs.map((tech, i) => (
-                  <motion.div key={tech} custom={i} variants={techBadgeVariants} initial="hidden" animate="visible">
+                  <motion.div
+                    key={tech}
+                    custom={i}
+                    variants={techBadgeVariants}
+                    initial="hidden"
+                    animate="visible"
+                  >
                     <Badge variant="outline" className="px-3 py-1">
                       {tech}
                     </Badge>
@@ -110,7 +135,13 @@ const HeroSection = () => {
               </div>
               <div className="flex flex-wrap gap-2">
                 {backendTechs.map((tech, i) => (
-                  <motion.div key={tech} custom={i} variants={techBadgeVariants} initial="hidden" animate="visible">
+                  <motion.div
+                    key={tech}
+                    custom={i}
+                    variants={techBadgeVariants}
+                    initial="hidden"
+                    animate="visible"
+                  >
                     <Badge variant="outline" className="px-3 py-1">
                       {tech}
                     </Badge>
