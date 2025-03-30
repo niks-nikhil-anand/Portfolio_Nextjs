@@ -62,7 +62,9 @@ const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-neutral-900/90  backdrop-blur-sm shadow-lg" : "bg-transparent"
+        scrolled 
+          ? "bg-gray-100 dark:bg-neutral-900/90 backdrop-blur-sm shadow-lg" 
+          : "bg-transparent dark:bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -90,7 +92,7 @@ const Navbar = () => {
               >
                 <Link 
                   href={link.href} 
-                  className="text-black hover:text-primary transition-colors dark:text-neutral-200 font-semibold"
+                  className="text-neutral-800 dark:text-neutral-200 hover:text-primary dark:hover:text-primary transition-colors font-semibold"
                 >
                   {link.title}
                 </Link>
@@ -123,7 +125,7 @@ const Navbar = () => {
               variant="ghost" 
               size="icon" 
               onClick={() => setIsOpen(!isOpen)}
-              className="text-neutral-200"
+              className="text-neutral-800 dark:text-neutral-200"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -143,7 +145,7 @@ const Navbar = () => {
                 key={link.title} 
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-neutral-300 hover:text-primary transition-colors px-4 py-2"
+                className="text-neutral-800 dark:text-neutral-200 hover:text-primary dark:hover:text-primary transition-colors px-4 py-2"
               >
                 {link.title}
               </Link>
