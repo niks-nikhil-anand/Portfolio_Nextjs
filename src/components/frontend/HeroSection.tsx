@@ -1,20 +1,28 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
-const HeroSection = () => {
-  // Create animated stars
-  const generateStars = (count:any) => {
+type Star = {
+  id: number;
+  size: number;
+  x: number;
+  y: number;
+  delay: number;
+  duration: number;
+};
+
+const HeroSection: React.FC = () => {
+  const generateStars = (count: number): Star[] => {
     return Array.from({ length: count }).map((_, i) => ({
       id: i,
       size: Math.random() * 3 + 1,
       x: Math.random() * 100,
       y: Math.random() * 100,
       delay: Math.random() * 5,
-      duration: Math.random() * 3 + 2
+      duration: Math.random() * 3 + 2,
     }));
   };
 
@@ -48,8 +56,8 @@ const HeroSection = () => {
       opacity: [0.5, 0.7, 0.5],
       scale: [1, 1.05, 1],
       rotate: [0, 5, 0],
-      transition: { duration: 20, repeat: Infinity, ease: "easeInOut" }
-    }
+      transition: { duration: 20, repeat: Infinity, ease: "easeInOut" },
+    },
   };
 
   const nebulaVariants = {
@@ -57,8 +65,8 @@ const HeroSection = () => {
     animate: {
       opacity: [0.3, 0.5, 0.3],
       scale: [1, 1.1, 1],
-      transition: { duration: 15, repeat: Infinity, ease: "easeInOut" }
-    }
+      transition: { duration: 15, repeat: Infinity, ease: "easeInOut" },
+    },
   };
 
   return (
