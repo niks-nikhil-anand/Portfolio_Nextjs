@@ -55,7 +55,7 @@ const Navbar = () => {
             {/* Resume Button */}
             <button className="flex items-center gap-2 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-600 text-white px-4 py-2 rounded-md hover:shadow-lg hover:shadow-blue-500/20 transition-all">
               <Download size={16} />
-              <span>Star Map</span>
+              <span>Resume</span>
             </button>
           </div>
 
